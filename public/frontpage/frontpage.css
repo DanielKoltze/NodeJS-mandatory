@@ -1,0 +1,162 @@
+body {
+  margin: 0px;
+}
+nav .left-side,
+nav .right-side {
+  margin: 0px 3em;
+}
+h1 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0px;
+}
+p,
+a {
+  font-family: "Courier New", Courier, monospace;
+}
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #252020;
+  padding: 10px;
+  box-shadow: 0 2px 2px -2px rgba(0, 0, 0, 0.2);
+}
+
+nav .right-side ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+.right-side ul li {
+  font-family: "Courier New", Courier, monospace;
+  padding: 0px 50px;
+  cursor: pointer;
+}
+.right-side ul li::after {
+  content: "";
+  width: 0px;
+  height: 1px;
+  display: block;
+  background: white;
+  transition: 300ms;
+}
+
+.right-side ul li:hover::after {
+  width: 100%;
+}
+
+.right-side ul li,
+.left-side p {
+  color: white;
+}
+
+.left-side p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.intro {
+  height: 50vh;
+  width: 100%;
+  background-color: #252020;
+  display: flex;
+  align-items: center;
+}
+
+.intro div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20em;
+}
+.intro div p {
+  color: grey;
+  text-align: center;
+  font-size: 15px;
+}
+.intro div h1 {
+  color: white;
+}
+
+a {
+  color: #0060b6;
+  text-decoration: none !important;
+}
+
+a:hover {
+  color: #00a0c6;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.pages-container {
+  text-align: center;
+  margin: 20px 0 0 0;
+  color: #252020;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40vh;
+}
+
+.welcome-container div {
+  width: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-container div .subtitle {
+  font-weight: 900;
+}
+.welcome-container div .lorem {
+  font-size: 11px;
+  text-align: center;
+}
+
+.welcome-container div span {
+  font-size: 55px;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-content a {
+  color: #252020;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content p {
+  text-align: center;
+  font-weight: 900;
+  border-bottom: solid;
+  margin: 0;
+  padding: 10px 0;
+}

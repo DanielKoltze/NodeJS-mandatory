@@ -1,0 +1,77 @@
+p {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  color: #333;
+}
+
+main {
+  margin: 0 15em;
+  background-color: white;
+}
+
+h1,
+h2 {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: #333;
+  padding-bottom: 0.5em;
+}
+h1 {
+  font-size: 36px;
+}
+h2 {
+  font-size: 22px;
+}
+
+.code-span,
+.terminal-span,
+.code-snippet p {
+  background-color: #252020;
+  border-radius: 5px;
+  padding: 2px 7px;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 12px;
+  color: #ffff;
+  line-height: 1.5;
+  color: white;
+}
+
+.code-snippet .comment {
+  color: #9f8f8f;
+}
+
+.terminal-span::before {
+  content: "$ ";
+  color: lightblue;
+}
+
+.code-snippet,
+.terminal-snippet {
+  background-color: #252020;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-family: "Roboto Mono", monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 1em;
+}
+.code-snippet p {
+  color: #ffff;
+}
+
+.cursor::after {
+  content: "|";
+  background-color: white;
+  width: 2px;
+  height: 100%;
+  animation: blinker 0.8s infinite;
+}
+
+@keyframes blinker {
+  90% {
+    opacity: 0;
+  }
+}

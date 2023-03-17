@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="./javascript.css" />
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <h1>Javascript</h1>
+      <p>
+        Today's lesson will cover a few the essential information about
+        javascript.
+      </p>
+      <div class="code-snippet code-snippet-example">
+        <p id="code-snippet-example" class="code-span cursor"></p>
+      </div>
+      <br />
+      <h2>Callback functions</h2>
+      <p>
+        First thing we will cover is callback functions because these will be
+        essential to know for some of the other topics.
+      </p>
+      <p>
+        A callback function is a function that is passed as an argument to
+        another function and is executed after some specific. In other words,
+        instead of passing data as an argument to a function, you're passing a
+        function that can perform some behavior or operation on that data.
+      </p>
+      <p>Here is a small example:</p>
+      <div class="code-snippet">
+        <p>function doSomething(callback) {</p>
+        <p>&nbsp console.log("something...")</p>
+        <p>&nbsp callback()</p>
+        <p>}</p>
+        <p>function helloWorld() {</p>
+        <p>&nbsp console.log("Hello world!")</p>
+        <p>}</p>
+        <p>doSomething(sayHello)</p>
+      </div>
+      <p>
+        In this example we define a function called
+        <span class="code-span">doSomething()</span> that takes a single
+        argument, which is expected to be a callback function. Inside the
+        <span class="code-span">doSomething()</span> function we perform some
+        task and then call the callback function.
+      </p>
+      <p>
+        We call the <code class="span-code">doSomething()</code> function and
+        pass the <span class="code-span">sayHello()</span> function as the
+        callback. When <span class="code-span">doSomething()</span> is executed,
+        it logs the message "Doing something..." to the console and then calls
+        the sayHello() function.
+      </p>
+      <br>
+      <p>Another example of a callback function is in the <span class="code-span">setInterval()</span> or/and <span class="code-span">setTimerout()</span>. This could look something like this:</p>
+      <div class="code-snippet">
+        <p>setInterval( () => {</p>
+        <p>&nbsp console.log("wait 1 second to excute")</p>
+        <p>},1000)</p>
+      </div>
+      <br>
+      <h2>Destructuring</h2>
+      <p>Destructuring is a feature in JavaScript that allows you to extract values from arrays or objects and assign them to variables. You can extract values from an array by using square brackets [] or from an object by using curly braces {}.</p>
+      <p>Here are 2 examples:</p>
+      <div class="code-snippet">
+        <p>const arr = [1, 2, 3]</p>
+        <p>const [a, b, c] = arr</p>
+        <br>
+        <p>const obj = { name: 'Daniel', age: 22 }</p>
+        <p>const { name, age } = obj</p>
+      </div>
+      <br>
+      <h2>Loop methods</h2>
+      <p>Arrays in javascript has functions that can manage our data stored in arrays. Here i will give example of the commonly used:</p>
+      <ul>
+        <li><p><span class="code-span">map()</span> When you want to transform elements in an array.</p></li>
+        <li><p><span class="code-span">filter()</span> When you want to select a some elements from an array.</p></li>
+        <li><p><span class="code-span">find()</span> When you want to select a single element from an array.</p></li>
+      </ul>
+      <p>Here are a few examples</p>
+      <div class="code-snippet">
+        <p>const arr = [1, 5, 8, 13, 18]</p>
+        <br>
+        <p class="comment">// the find method will return the first number above 10 in the array</p>
+        <p>const foundNumber = arr.find(number => number > 10)</p>
+        <br>
+        <p class="comment">// the filter method will return a list of all the number above 10</p>
+        <p>const foundNumbers = arr.filter(number => number > 10)</p>
+        <br>
+        <p class="comment">// the map method will return an array with all elements timed 2. In this case: [2,10,16,26,36]</p>
+        <p>const numberTimedTwo = arr.map(number => number * 2)</p>
+      </div>
+      <br>
+      <h2>Fetch and promises</h2>
+      <p>The <span class="code-span">fetch()</span> method is used to send HTTP requests to a server and receive responses from it. It takes 2 arguments:</p>
+      <ul>
+        <li><p>First argument is the url. A string representing the URL to which the request is sent.        </p></li>
+        <li><p>The second argument is an object containing request method, headers, body, etc. The method attribute is by default set to a GET.
+        </p></li>
+      </ul>
+      <p>The <span class="code-span">fetch()</span> method returns a promise which an object that represents a value that may not be available yet. Promises are widely used to handle asynchronous operations such as fetches. When an asynchronous operation is started, a promise is returned immediately. This Promise is initially in the pending state, and will transition to be fulfilled or rejected when the operation completes. To handle these promises when can either use <span class="code-span">.then()</span> and <span class="code-span">catch()</span> or we can use <span class="code-span">await/async</span></p>
+      <p>Here are some examples of fetches and promises:</p>
+      <p>Here are some examples of fetches and promises:</p>
+      <div class="code-snippet">
+        <p>fetch("https://pokeapi.co/api/v2/pokemon/1") <br>
+            .then(res => res.json()) <br>
+            .then(data => console.log(data)) <br>
+            .catch(e => console.log(e))</p>
+        <p> <br>
+            try{ <br>
+                const res = await fetch("https://pokeapi.co/api/v2/pokemon/1") <br>
+                const data = await res.json() <br>
+                console.log(data) <br>
+                }catch(e){ <br>
+                    console.log(e) <br>
+                }
+        </p>
+      </div>
+    </main>
+    <script src="javascript.js" type="module"></script>
+  </body>
+</html>

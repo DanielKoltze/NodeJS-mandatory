@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Express</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <h1>Express</h1>
+      <div>
+        <p>Today i will teach you everything you have to know about express!</p>
+        <div class="code-snippet">
+          <span class="code-span">app.get('/', (req,res)){</span>
+          <br>
+          <span>&nbsp </span><span class="code-span cursor" id="code-span-express"></span>
+          <br>
+            <span class="code-span">});</span>
+        </div>
+        <br />
+        <br />
+        <p>
+          Express is a backend module in NodeJS which is used for building
+          server-side web apps and APIs. Express makes it easy to create HTTP servers
+          and handling requests and responses.
+        </p>
+        <p>
+          To use express, you first need to have NodeJS installed on you computer. After this just run <span class="code-span">npm i express</span> in the terminal in the
+          current work directory.<br />
+          <br />
+          <div class="terminal-snippet">
+          <span class="terminal-span">npm i express</span>
+        </div>
+        </p>
+        <br />
+        <p>
+          This will create a node_module folder which contains all the packages
+          and dependencies installed.
+        </p>
+        <p>
+          It will also create a package.json which is a file that contains name,
+          version, licenses, and dependencies for the current node project.
+        </p>
+        <img
+          src="/assets/images/express_folder.png"
+          alt="Img of foldersetup"
+        />
+        <p>Now we have succesfully installed express!</p>
+        <br />
+        <p>
+          Next step is to write some code. We will need to create a js file in you
+          project directory. This can theoretically be called anything but for
+          the sake of code conventions we will call it app.js
+        </p>
+        <p>
+          Firstly we have to use the build in function
+          <span class="code-span">require()</span> which allows us to load
+          modules to use the module's functionalities. After we have imported express we
+          just need to use <span class="code-span">express()</span> to create an
+          instance of an express app.
+        </p>
+        <div class="code-snippet">
+          <p>const express = require('express')</p>
+          <p>const app = express()</p>
+        </div>
+        <br />
+        <p>
+          Next step is to use the <span class="code-span">listen()</span> method
+          on our application. It tells the server to start listening for
+          incomming requests on a specific port.
+        </p>
+        <p>
+          The <span class="code-span">listen()</span> method takes two
+          parameters.
+        </p>
+        <p>
+          1. The first parameter is the portnumber on which the server has to
+          listen on.
+        </p>
+        <p>
+          2. The second parameter is a optionally callback method that will be
+          called once the server starts listening for incoming requests.
+        </p>
+        <div class="code-snippet">
+          <p>const PORT = 8080;</p>
+          <p>&nbsp    app.listen(port, () => {</p>
+          <p>&nbsp    console.log(`Server listening on port ${PORT}`);</p>
+          <p>});</p>
+        </div>
+        <p>Finally the fun begins. Now we are able to use the HTTP methods. This can be done by writing <span class="code-span">app.get()</span>, <span class="code-span">app.post()</span> etc.</p>
+        <p>These methods all take 2 arguments. First parameter is the endpoint and the second one is a callback function. This callback function takes two parameters: req and res. <br>req represents the HTTP request object that contains information about the incoming request, while res represents the HTTP response object that allows you to send a response back to the client.</p>
+        <p>It could look something like this: </p>
+        <div class="code-snippet">
+            <p>app.get('/hello', function (req, res) {</p>
+                <p> const name = req.query.name || 'Daniel'</p>
+                <p>&nbsp res.send(`Hello, ${name}!`)</p>
+                <p>});</p>
+        </div>
+        <p>If we were to make a <span class="code-span">app.post()</span> we would need to write <span class="code-span">app.use(express.json())</span>. Without this the server would not be able to properly parse the JSON data in the request body and the data would not be accessible to the server. </p>
+        <p><span class="code-span">app.use()</span> is a method that is used to add middleware functions to the application.</p>
+
+
+
+        <p>To serve static files we can use <span class="code-span">express.sendfile()</span> method. This method takes the path to the file we want to serve. This could look something like: <span class="code-span">res.sendFile("/path/to/index.html")</span></p>
+        <p>This index.html may have some other reference to another css file or js file. To make these accessible we can use <span class="code-span">app.use(express.static("public"))</span></p>
+        <p>It could look something like this:</p>
+        <div class="code-snippet">
+            <p>app.use(express.static("public"))</p>
+            <br>
+                <p>app.get('/', function(req, res) {</p>
+                    <p>&nbsp  res.sendFile("/public/frontpage/index.html")</p>
+                <p>})</p>
+
+        </div>
+      </div>
+    </main>
+    <script src="express.js" type="module"></script>
+  </body>
+</html>

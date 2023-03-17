@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Terminal</title>
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="terminal.css" />
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <h1>Terminal</h1>
+      <p>Today i will teach you a few git and npm commands in the terminal.</p>
+      <div class="fakeMenu">
+        <div class="fakeButtons fakeClose"></div>
+        <div class="fakeButtons fakeZoom"></div>
+        <div class="fakeButtons fakeMinimize"></div>
+      </div>
+      <div class="terminalScreen">
+        <br />
+        <span class="terminal-span cursor" id="terminal-span-example"></span>
+      </div>
+      <br />
+      <p>
+        Git is a powerful version control system that is widely used to
+        collaborate on projects. To use git in the terminal we first have to
+        install it. After the installation we can check if git was succesfully
+        downloaded by writing
+        <span class="terminal-span">git --verision</span> in the terminal.
+      </p>
+      <p>
+        Now we are able to use a bunch of git commands! Here is an explanation
+        of the most commonly used once:
+      </p>
+      <p>
+        1. <span class="terminal-span">git init</span>: initializes a new Git
+        repository in the currenty working directory.
+      </p>
+      <p>
+        2. <span class="terminal-span">git add "file/directory"</span>: adds
+        changes to the staging area. You can specify a single file or directory,
+        or use ".", "*" or "-A" to add all changes.
+      </p>
+      <p>
+        3. <span class="terminal-span"> git commit -m "commit message"</span>:
+        commits the changes in the staging area with a commit message.
+      </p>
+      <p>
+        4. <span class="terminal-span"> git status</span>: shows the current
+        status of the repository, including which files have been modified or
+        staged.
+      </p>
+      <p>
+        5. <span class="terminal-span"> git pull</span>: downloads changes from
+        a remote repository.
+      </p>
+      <p>
+        6. <span class="terminal-span"> git push</span>: uploads local changes
+        to a remote repository.
+      </p>
+
+      <br />
+
+      <p>
+        Just like before, we have to download NodeJS before we can use it and
+        the commands that go with it. If this is done succesfully we should be
+        able to check the version by typing
+        <span class="terminal-span">node --verision</span> in the terminal.
+      </p>
+      <p>
+        Once this is installed navigate to your project directory in the
+        terminal and run npm init. This will create a package.json file, which
+        will contain information about your project and its dependencies.
+      </p>
+      <p>
+        To install packages we can write
+        <span class="terminal-span">npm i "package name"</span>.
+      </p>
+    </main>
+    <script src="terminal.js" type="module"></script>
+  </body>
+</html>
