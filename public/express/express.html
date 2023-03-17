@@ -100,6 +100,18 @@
                 <p>&nbsp res.send(`Hello, ${name}!`)</p>
                 <p>});</p>
         </div>
+
+        <p>The req argument can use <span class="code-span">param</span> and <span class="code-span">query</span> to access parameters and query strings.</p>
+        <p>In the above coding example we use the <span class="code-span">req.query.name</span> which returns the value of the name query string. For this to not only send "Hello Daniel" we have to make a query string with the key-value pair: /hello?name=Bob</p>
+        <p>Another way of doing this is by using param. Here we have to type : and then the parameter we want. The code would look like this:</p>
+
+        <div class="code-snippet">
+          <p>app.get('/hello:name', function (req, res) {</p>
+              <p>const name = req.param.name || 'Daniel'</p>
+              <p>&nbsp res.send(`Hello, ${name}!`)</p>
+              <p>});</p>
+      </div>
+
         <p>If we were to make a <span class="code-span">app.post()</span> we would need to write <span class="code-span">app.use(express.json())</span>. Without this the server would not be able to properly parse the JSON data in the request body and the data would not be accessible to the server. </p>
         <p><span class="code-span">app.use()</span> is a method that is used to add middleware functions to the application.</p>
 

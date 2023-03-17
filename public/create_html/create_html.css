@@ -33,6 +33,7 @@ textarea {
   flex-direction: column;
   border: solid;
   cursor: pointer;
+  box-sizing: border-box;
 }
 .tag-container div h1 {
   margin: 2px !important;

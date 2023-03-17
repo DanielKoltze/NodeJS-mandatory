@@ -21,7 +21,14 @@ inputTitle.addEventListener("keyup", (e) => {
 })
 
 function writeElement(elementToWrite, classes = "") {
-  textArea.value += `\n <${elementToWrite} class="${classes}"></${elementToWrite}>`
+  //textArea.value += `\n <${elementToWrite} class="${classes}"></${elementToWrite}>`
+  const val = textArea.value
+  const start = val.substring(0, textArea.selectionStart)
+  const end = val.substring(textArea.selectionEnd, textArea.length)
+  textArea.value = start + `<${elementToWrite} class="${classes}"></${elementToWrite}>` + end
+  
+
+  console.log(textArea.selectionStart)
 }
 
 h1NoClass.addEventListener("click", (e) => {
