@@ -13,5 +13,5 @@ document.getElementById("login-button").addEventListener("click", async (e) => {
   if (res.ok) {
     window.location.replace("/create-html")
   }
-  const data = await res.json()
+  //const data = await res.json()
 })

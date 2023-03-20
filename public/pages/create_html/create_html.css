@@ -3,8 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   width: 50%;
+  margin: 20px 0 0 0;
 }
-body {
+main {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,6 +18,7 @@ button {
 }
 textarea {
   resize: none;
+  overflow: hidden;
 }
 .tag-container {
   width: 50%;
@@ -26,7 +28,7 @@ textarea {
   margin-top: 20px;
 }
 .tag-container div {
-  width: 25%;
+  width: 24%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -37,4 +39,8 @@ textarea {
 }
 .tag-container div h1 {
   margin: 2px !important;
+}
+
+.tag-container div p {
+  text-align: center;
 }

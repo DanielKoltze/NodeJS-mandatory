@@ -48,7 +48,7 @@ function deleteWord(){
 */
 
 
-import main from "../assets/js/main.js"
+import main from "../../assets/js/main.js"
 
 main.typeAnimation(document.getElementById("code-span-express"),
 ["res.send('hello world')","res.sendFile('/path/to/index.html')","res.send(req.params.name)"]

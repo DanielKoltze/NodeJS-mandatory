@@ -1,0 +1,61 @@
+body {
+  margin: 0px;
+  overflow-y: scroll;
+}
+.intro {
+  height: 50vh;
+  width: 100%;
+  background-color: #252020;
+  display: flex;
+  align-items: center;
+}
+
+.intro div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 20em;
+}
+.intro div p {
+  color: grey;
+  text-align: center;
+  font-size: 15px;
+}
+.intro div h1 {
+  color: white;
+}
+
+.pages-container {
+  text-align: center;
+  margin: 20px 0 0 0;
+  color: #252020;
+}
+
+.welcome-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 40vh;
+}
+
+.welcome-container div {
+  width: 30vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.welcome-container div .subtitle {
+  font-weight: 900;
+}
+.welcome-container div .lorem {
+  font-size: 11px;
+  text-align: center;
+}
+
+.welcome-container div span {
+  font-size: 55px;
+}

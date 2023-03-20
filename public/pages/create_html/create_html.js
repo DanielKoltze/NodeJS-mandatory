@@ -8,7 +8,7 @@ const textArea = document.getElementById("textarea-html")
 const inputTitle = document.getElementById("title-input")
 const upperHTML = document.getElementById("upper-textarea")
 const lowerHTML = document.getElementById("lower-textarea")
-lowerHTML.value = "</body> \n</html>"
+lowerHTML.value = "</main> \n </body> \n</html>"
 const text = upperHTML.value
 inputTitle.addEventListener("keyup", (e) => {
   const titleLength = "<title>".length
@@ -25,8 +25,8 @@ function writeElement(elementToWrite, classes = "") {
   const val = textArea.value
   const start = val.substring(0, textArea.selectionStart)
   const end = val.substring(textArea.selectionEnd, textArea.length)
-  textArea.value = start + `<${elementToWrite} class="${classes}"></${elementToWrite}>` + end
-  
+  textArea.value =
+    start + `<${elementToWrite} class="${classes}"></${elementToWrite}>` + end
 
   console.log(textArea.selectionStart)
 }

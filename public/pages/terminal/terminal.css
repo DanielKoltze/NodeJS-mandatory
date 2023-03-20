@@ -1,6 +1,4 @@
-body {
-  line-height: 2;
-}
+
 .fakeButtons {
   height: 10px;
   width: 10px;
@@ -66,3 +64,4 @@ body {
 .terminal-span {
   background-color: #151515;
 }
+

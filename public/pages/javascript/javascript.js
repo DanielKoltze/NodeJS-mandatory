@@ -1,4 +1,4 @@
-import main from "../assets/js/main.js"
+import main from "../../assets/js/main.js"
 
 main.typeAnimation(document.getElementById("code-snippet-example"), [
   "const multiply = (a , b) => a + b",
