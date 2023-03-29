@@ -15,7 +15,7 @@
       </p>
       <p>
         A callback function is a function that is passed as an argument to
-        another function and is executed after some specific. In other words,
+        another function and is executed after some specific code. In other words,
         instead of passing data as an argument to a function, you're passing a
         function that can perform some behavior or operation on that data.
       </p>
@@ -45,13 +45,19 @@
         the sayHello() function.
       </p>
       <br>
-      <p>Another example of a callback function is in the <span class="code-span">setInterval()</span> or/and <span class="code-span">setTimerout()</span>. This could look something like this:</p>
+      <p>Another example of a callback function is in the <span class="code-span">setInterval()</span> or/and <span class="code-span">setTimeout()</span>. This could look something like this:</p>
       <div class="code-snippet">
-        <p>setInterval( () => {</p>
+        <p>setTimeout( () => {</p>
         <p>&nbsp console.log("wait 1 second to excute")</p>
         <p>},1000)</p>
       </div>
       <br>
+
+      <h2>Declaring variables</h2>
+      <p>In javaScript <span class="code-span">const</span>, <span class="code-span">let</span> and <span class="code-span">var</span> are used to declare variables.</p>
+      <p>The <span class="code-span">const</span> keyword is used to declare a constant variable, which cannot be reassigned or modified. When you declare a variable using const you have to initialize it with a value, and you cannot change that value later in the code. However you are allowed to modify content inside a const array or objects</p>
+      <p>On the other hand we have the <span class="code-span">let</span> keyword. This is used to declare a variable that can be reassigned later in the code. You can also also leave a <span class="code-span">let</span> uninitialized </p>
+      <p>Lastly we have the <span class="code-span">var</span> keyword. This keyword is used to declare a variable that can be reassigned just like the <span class="code-span">let</span> keyword. It has function scope, which means it is accessible throughout the function in which it is defined. Mostly you should avoid using the <span class="code-span">var</span> keyword unless you have a specific reason to use it.</p>
       <h2>Destructuring</h2>
       <p>Destructuring is a feature in JavaScript that allows you to extract values from arrays or objects and assign them to variables. You can extract values from an array by using square brackets [] or from an object by using curly braces {}.</p>
       <p>Here are 2 examples:</p>
@@ -93,7 +99,6 @@
       </ul>
       <p>The <span class="code-span">fetch()</span> method returns a promise which an object that represents a value that may not be available yet. Promises are widely used to handle asynchronous operations such as fetches. When an asynchronous operation is started, a promise is returned immediately. This Promise is initially in the pending state, and will transition to be fulfilled or rejected when the operation completes. To handle these promises when can either use <span class="code-span">.then()</span> and <span class="code-span">catch()</span> or we can use <span class="code-span">await/async</span></p>
       <p>Here are some examples of fetches and promises:</p>
-      <p>Here are some examples of fetches and promises:</p>
       <div class="code-snippet">
         <p>fetch("https://pokeapi.co/api/v2/pokemon/1") <br>
             .then(res => res.json()) <br>
@@ -101,11 +106,11 @@
             .catch(e => console.log(e))</p>
         <p> <br>
             try{ <br>
-                const res = await fetch("https://pokeapi.co/api/v2/pokemon/1") <br>
-                const data = await res.json() <br>
-                console.log(data) <br>
+              &nbsp const res = await fetch("https://pokeapi.co/api/v2/pokemon/1") <br>
+              &nbsp const data = await res.json() <br>
+              &nbsp console.log(data) <br>
                 }catch(e){ <br>
-                    console.log(e) <br>
+                  &nbsp   console.log(e) <br>
                 }
         </p>
       </div>

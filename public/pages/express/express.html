@@ -48,10 +48,11 @@
         <p>
           Firstly we have to use the build in function
           <span class="code-span">require()</span> which allows us to load
-          modules to use the module's functionalities. After we have imported express we
+          modules to use the module's functionalities. If we have enabled ES Module instead we would use <span class="code-span">import</span>.  After we have imported express we
           just need to use <span class="code-span">express()</span> to create an
           instance of an express app.
         </p>
+        <p>Here is an example of what it could look like:</p>
         <div class="code-snippet">
           <p>const express = require('express')</p>
           <p>const app = express()</p>
@@ -106,8 +107,9 @@
 
 
 
-        <p>To serve static files we can use <span class="code-span">express.sendfile()</span> method. This method takes the path to the file we want to serve. This could look something like: <span class="code-span">res.sendFile("/path/to/index.html")</span></p>
+        <p>To serve static files we can use <span class="code-span">express.sendfile()</span> method. This method takes the path to the file we want to serve. This could look something like: <span class="code-span">res.sendFile("/public/path/to/index.html")</span></p>
         <p>This index.html may have some other reference to another css file or js file. To make these accessible we can use <span class="code-span">app.use(express.static("public"))</span></p>
+        <p>This line of code will make express serve static files from the "public" directory, which is located in the root directory of the application.</p>
         <p>It could look something like this:</p>
         <div class="code-snippet">
             <p>app.use(express.static("public"))</p>
@@ -115,8 +117,11 @@
                 <p>app.get('/', function(req, res) {</p>
                     <p>&nbsp  res.sendFile("/public/frontpage/index.html")</p>
                 <p>})</p>
-
         </div>
+      
+
+
+
       </div>
     </main>
     <script src="/pages/express/express.js" type="module"></script>
