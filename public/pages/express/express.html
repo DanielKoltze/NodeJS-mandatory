@@ -93,11 +93,11 @@
 
         <p>The req argument can use <span class="code-span">param</span> and <span class="code-span">query</span> to access parameters and query strings.</p>
         <p>In the above coding example we use the <span class="code-span">req.query.name</span> which returns the value of the name query string. For this to not only send "Hello Daniel" we have to make a query string with the key-value pair: /hello?name=Bob</p>
-        <p>Another way of doing this is by using param. Here we have to type : and then the parameter we want. The code would look like this:</p>
+        <p>Another way of doing this is by using param. Here we have to type : and then the parameter we want. The questionmark behind name in the endpoint just means that it is optional. If the questionmark was not there the route /hello would not be accessible without the param. The code would look like this:</p>
 
         <div class="code-snippet">
-          <p>app.get('/hello:name', function (req, res) {</p>
-              <p>const name = req.param.name || 'Daniel'</p>
+          <p>app.get('/hello/:name?', (req, res) => {</p>
+              <p>const name = req.params.name || "Daniel"</p>
               <p>&nbsp res.send(`Hello, ${name}!`)</p>
               <p>});</p>
       </div>
